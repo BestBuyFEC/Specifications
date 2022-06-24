@@ -1,0 +1,24 @@
+.category-container {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.section-title-container {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.section-title {
+  line-height: 24px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 0;
+}
