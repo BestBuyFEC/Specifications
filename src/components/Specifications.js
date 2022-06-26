@@ -70,12 +70,32 @@ const Specifications = () => {
 
 
     return (
-        <div className="specification-container">
-            {loading && <h1>Loading...</h1>}
-            <h1>Specifications</h1>
-            {general && <General general={general[0]} />}
-            {warranty && <Warranty warranty={warranty[0]} />}
-            {other && <Other other={other[0]} />}
+        <div id="shop-specifications">
+            <div className="specs-container specs-wrapper all-specs-wrapper">
+                <div className="specifications-accordion-wrapper">
+                    <div className="c-accordion border-bottom size-1">
+                        <div aria-level="2" role="heading">
+                            <button class="c-show-hide-trigger c-accordion-trigger p-200 py-lg-300 px-lg-none flex align-items-center" type="button" aria-expanded="true" aria-controls="specifications-accordion-content" data-track="Specifications: Accordion Close">
+                                <span class="c-accordion-trigger-label">Specifications</span>
+                                <svg aria-hidden="true" role="img" viewBox="0 0 100 100" class="c-accordion-trigger-icon w-200 fill w-lg-300 mr-lg-200 c-accordion-rotate-caret-up">
+                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.05 21.65a.97.97 0 0 1-.6-.2l-12.33-9.3A.98.98 0 0 1 4.3 10.6l11.75 8.85 11.74-8.85a.98.98 0 0 1 1.18 1.56l-12.34 9.3a.97.97 0 0 1-.58.2"></path>
+                                    </svg>
+                                </svg>
+                            </button>
+                        </div>
+                        <div className="c-show-hide" id="specifications-accordion-content">
+                            <div className="c-accordion-content">
+                                <div className="spec-categories">
+                                    {general && <General general={general[0]} />}
+                                    {warranty && <Warranty warranty={warranty[0]} />}
+                                    {other && <Other other={other[0]} />}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
