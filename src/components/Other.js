@@ -16,7 +16,6 @@ const Other = (props) => {
                     </ul>
                 </div>
             </div>
-            <div className="line-break lv"></div>
         </div>
     );
 }

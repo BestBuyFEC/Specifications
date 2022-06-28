@@ -2,16 +2,8 @@
   box-sizing: border-box;
 }
 
-.border-bottom {
-  border-bottom: var(--border-base);
-}
-
 div {
   display: block;
-}
-
-.category-wrapper {
-  max-width: 100%;
 }
 
 .flex {
@@ -35,10 +27,6 @@ div {
   padding: 0;
 }
 
-.all-specs-wrapper {
-  background-color: #fff;
-}
-
 .specs-table {
   margin-top: 3px;
   padding: 0;
@@ -50,26 +38,7 @@ div {
   margin: 0 auto;
 }
 
-button {
-  appearance: auto;
-  writing-mode: horizontal-tb !important;
-  text-rendering: auto;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-indent: 0px;
-  text-shadow: none;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-  text-transform: none;
-  cursor: pointer;
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
 
-}
 
 .c-accordion-trigger {
   font-size: 17px;
@@ -120,9 +89,10 @@ button {
   text-align: -webkit-match-parent;
 }
 
+body {
+  max-width: 1500px;
+}
 
-/* 
-.title-container {} */
 
 .row-title {
   color: #1d252c;
@@ -130,13 +100,61 @@ button {
   line-height: 21px;
 }
 
-/* .lv {
-  margin-left: auto;
-  width: 75%;
-} */
 
 .line-break {
   border-top: 1px solid #c5cbd5;
   margin: 20px 0;
-  padding-top: 3rem;
+  padding-top: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Collapsible {
+  height: 50px;
+  margin-left: 90px;
+  margin-right: 90px;
+  min-width: 1050px;
+  justify-content: center;
+}
+
+.Collapsible span {
+  padding-top: 10px;
+  padding-bottom: 25px;
+  padding-right: 800px;
+}
+
+.Collapsible svg {
+  padding-top: 20;
+}
+
+.Collapsible svg:hover {
+  cursor: pointer;
+}
+
+.Collapsible__contentInner {
+  max-height: fit-content;
+}
+
+.Collapsible__contentOuter {
+  border-bottom: 1px solid lightgray;
+  padding-top: 20px;
+}
+
+.Collapsible__trigger {
+  font-size: 27px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+
+}
+
+.Collapsible__trigger:hover {
+  cursor: pointer;
+}
+
+.Collapsible__trigger svg.is-open {
+  transform: rotateZ(180deg);
 }
