@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import General from "./General";
 import Warranty from "./Warranty";
 import Other from "./Other";
+import styled from 'styled-components';
+import { ChevronDown } from '@styled-icons/bootstrap';
+import Collapsible from 'react-collapsible';
 
 const Specifications = () => {
     const [loading, setLoading] = useState(true);
@@ -17,7 +20,7 @@ const Specifications = () => {
 
 
     const fetchGeneral = async () => {
-        await fetch('http://localhost:3000/specs/general')
+        await fetch('http://localhost:3040/specs/general')
             .then((response) => response.json())
             .then((data) => setGeneral(data.map((elem) => (
                 {
@@ -40,7 +43,7 @@ const Specifications = () => {
 
 
     const fetchWarranty = async () => {
-        await fetch('http://localhost:3000/specs/warranty')
+        await fetch('http://localhost:3040/specs/warranty')
             .then((response) => response.json())
             .then((data) => setWarranty(data.map((elem) => (
                 {
@@ -55,7 +58,7 @@ const Specifications = () => {
 
 
     const fetchOther = async () => {
-        await fetch('http://localhost:3000/specs/other')
+        await fetch('http://localhost:3040/specs/other')
             .then((response) => response.json())
             .then((data) =>
                 setOther(data.map((elem) => (
@@ -70,14 +73,23 @@ const Specifications = () => {
 
 
     return (
-        <div className="specification-container">
-            {loading && <h1>Loading...</h1>}
-            <h1>Specifications</h1>
-            {general && <General general={general[0]} />}
-            {warranty && <Warranty warranty={warranty[0]} />}
-            {other && <Other other={other[0]} />}
-        </div>
+        <Collapsible trigger='Specifications' triggerSibling={<DownArrowIcon />} transitionTime={200} >
+            <div id="shop-specifications">
+                <div className="spec-categories">
+                    {general && <General general={general[0]} />}
+                    <div className="line-break lv"></div>
+                    {warranty && <Warranty warranty={warranty[0]} />}
+                    <div className="line-break lv"></div>
+                    {other && <Other other={other[0]} />}
+                </div>
+            </div>
+        </Collapsible>
     );
 }
 
 export default Specifications;
+
+const DownArrowIcon = styled(ChevronDown)`
+  height: 20px;
+  justify-self: flex-end;
+`

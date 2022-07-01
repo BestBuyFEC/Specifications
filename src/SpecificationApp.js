@@ -1,12 +1,11 @@
-import './App.css';
 import Specifications from './components/Specifications';
 
-function App() {
+function SpecificationApp() {
   return (
-    <div className="App">
+    <div className="Specifications">
       <Specifications />
     </div>
   );
 }
 
-export default App;
+export default SpecificationApp;
