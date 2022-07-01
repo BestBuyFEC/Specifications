@@ -20,7 +20,7 @@ const Specifications = () => {
 
 
     const fetchGeneral = async () => {
-        await fetch('http://localhost:3002/specs/general')
+        await fetch('http://localhost:3040/specs/general')
             .then((response) => response.json())
             .then((data) => setGeneral(data.map((elem) => (
                 {
@@ -43,7 +43,7 @@ const Specifications = () => {
 
 
     const fetchWarranty = async () => {
-        await fetch('http://localhost:3002/specs/warranty')
+        await fetch('http://localhost:3040/specs/warranty')
             .then((response) => response.json())
             .then((data) => setWarranty(data.map((elem) => (
                 {
@@ -58,7 +58,7 @@ const Specifications = () => {
 
 
     const fetchOther = async () => {
-        await fetch('http://localhost:3002/specs/other')
+        await fetch('http://localhost:3040/specs/other')
             .then((response) => response.json())
             .then((data) =>
                 setOther(data.map((elem) => (
