@@ -13,13 +13,13 @@ const Specifications = () => {
     const [other, setOther] = useState(null);
 
     useEffect(() => {
-        fetchGeneral();
-        fetchWarranty();
-        fetchOther();
+        fetchData()
+        // fetchGeneral();
+        // fetchWarranty();
+        // fetchOther();
     }, [])
 
-
-    const fetchGeneral = async () => {
+    async function fetchData(){
         await fetch('http://localhost:3040/specs/general')
             .then((response) => response.json())
             .then((data) => setGeneral(data.map((elem) => (
@@ -36,13 +36,7 @@ const Specifications = () => {
                 }
             ))))
             .catch((error) => console.log(error))
-        setLoading(false);
-    }
 
-
-
-
-    const fetchWarranty = async () => {
         await fetch('http://localhost:3040/specs/warranty')
             .then((response) => response.json())
             .then((data) => setWarranty(data.map((elem) => (
@@ -53,11 +47,7 @@ const Specifications = () => {
                     warranty_labor: elem.warranty_labor
                 }
             )))).catch((error) => console.log(error))
-        setLoading(false);
-    }
 
-
-    const fetchOther = async () => {
         await fetch('http://localhost:3040/specs/other')
             .then((response) => response.json())
             .then((data) =>
@@ -68,9 +58,15 @@ const Specifications = () => {
                         upc: elem.upc
                     }
                 )))).catch((error) => console.log(error))
-        setLoading(false);
+                setLoading(false);
     }
-
+    
+    if(loading === true){
+        console.log('loading')
+        return(
+          <h1 className="header">Loading</h1>
+        )
+      } else {
 
     return (
         <Collapsible trigger='Specifications' triggerSibling={<DownArrowIcon />} transitionTime={200} >
@@ -85,6 +81,7 @@ const Specifications = () => {
             </div>
         </Collapsible>
     );
+}
 }
 
 export default Specifications;
