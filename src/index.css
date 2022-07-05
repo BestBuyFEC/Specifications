@@ -14,6 +14,10 @@ div {
   flex-direction: row;
 }
 
+#shop-specifications{
+  padding-top: 20px;
+}
+
 .section-title-container {
   flex: 0 0 auto;
   width: 25%;
@@ -89,9 +93,9 @@ div {
   text-align: -webkit-match-parent;
 }
 
-body {
+/* body {
   max-width: 1500px;
-}
+} */
 
 
 .row-title {
@@ -112,7 +116,7 @@ body {
   flex-direction: column;
 }
 
-.Collapsible {
+/* .Collapsible {
   height: 50px;
   margin-left: 90px;
   margin-right: 90px;
@@ -153,4 +157,4 @@ body {
 
 .Collapsible__trigger svg.is-open {
   transform: rotateZ(180deg);
-}
+} */
